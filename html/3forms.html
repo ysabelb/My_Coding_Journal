@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <title>Dropdown List</title>
+</head>
+<body>
+    <h1>HTML</h1>
+    <h1>FORMS</h1>
+    <!-- A Form collects(post) and sends(get) info to a diiferent server(action value) -->
+    <form action="/practice.html" method="POST"> 
+        <p>This is a blank form</p>
+    </form> 
+    
+    
+    <section id="overlay"  class="logo">
+        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg" alt="Davie's Burgers Logo" id="logo" width=500px height=250px>
+    </section>
+
+    <h3>** Text Input</h3>
+    <!-- The <input> element will have attributes ex. type, name.
+    without the name attribute, information in the <input> won’t be sent when the <form> is submitted. 
+    -->
+    <form>
+        <h4>Login to start creating a burger!</h4>  
+        <input type="text" name="username" value="Ysabel">
+    </form>
+
+
+    <h3>**  Adding a Label</h3>
+    <!-- For a user to identify an <input> we give it a <label> element -->
+    <form>
+        <h4>Login to start creating a burger!</h4>
+        <label for="username">Username </label>
+        <input id="username" type="text" name="username" >
+    </form>   
+
+    <h3>** Password Input</h3>
+    <!-- we use the type="password" attribute for <input> -->
+    <form>
+        <h4>Login to start creating a burger!</h4>
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" >
+        <br>
+        <label for="user-pw">Password:</label>
+        <input id="user-pw" type="password" name="user-pw" >
+    </form>   
+    
+    <h3>** Number Input</h3>
+    <!-- setting type="number" for an <input> we restrict what users type into the input 
+        field to just numbers. A step attribute creates arrows to increase or decrease times  -->
+    <form>
+        <h4>Create a burger!</h4>
+        <section class="protein">
+            <label for="patty">What type of protein would you like?</label>
+            <input id="patty" type="text" name="patty"  value="beef">
+        </section>
+            <br>
+        <section class="patties">
+            <label for="amount">How many patties would you like?</label>
+            <input id ="amount" type="number" name="amount"  step="1">
+        </section>
+    </form>
+
+    <h3>** Range Input</h3>
+    <!-- Setting type to "range" creates a slider. The <input> needs a min and max. 
+    Smaller step values will make the slider more fluid.
+     -->
+    <form>
+    <section class="cooked">
+        <label for="doneness">How do you want your patty cooked?</label>
+        <br>
+        <span>Rare</span>
+        <input  id="doneness" name="doneness" type="range" min="0" max="5" step="0.5"> 
+        <span>Well-Done</span>
+    </section>
+    </form>
+
+    <h3>** Checkbox Input</h3>
+    <!-- presentes multiple options to users and allows them to select any number of options -->
+    <section class="toppings">
+        <span>What toppings would you like?</span>
+        <br>
+        <label for="lettuce">Lettuce</label>
+        <input id="lettuce" name="topping" type="checkbox" value="lettuce">
+
+        <label for="tomato">Tomato</label>
+        <input id="tomato" name="topping" type="checkbox" value="tomato"> 
+       
+        <label for="sauce">Sauce</label>
+        <input id="sauce" name="topping" type="checkbox" value="sauce">  
+    </section>
+
+    <h3>** Radio Button Input</h3>
+    <!-- presents multiple options and only allow for one selection ex. You Agree with T&Cs 
+    User can select multiple checkboxes but only one radio button
+    -->
+    <section class="cheesy">
+        <span>Would you like to add cheese?</span>
+        <br>
+
+        <input id="yes" type="radio" name="cheese" value="yes">
+        <label for="yes">Yes</label>
+       
+        <input id="no" type="radio" name="cheese" value="no">
+        <label for="no">No</label>
+    </section>
+
+    <h3>** Dropdown list</h3>
+    <!--choose one option-->
+    <section class="bun-type">
+        <label for="bun">What type of bun would you like?</label>
+        <select id="bun" name="bun">
+            <option value="sesame">Sesame</option>
+            <option value="potato">Potato</option>
+            <option value="grains">Grains</option>
+        </select>
+
+    <h3>** Datalist Input</h3>
+    <!-- When a list has too many options -->
+    <section class="sauce-selection">
+        <label for="sauce">What type of sauce would you like?</label>
+            <input list="sauces" id="sauce" name="sauce">
+            <datalist id="sauces">
+                <option value="ketchup"></option>
+                <option value="mayo"></option>
+                <option value="spicy"></option>
+            </datalist>  
+    </section>
+
+
+    <h3>** Textarea element</h3>
+    <!-- Its used to create  a text field  -->
+    <section class="extra-info">
+        <label for="extra">Anything else you want to add?</label>
+        <br>
+    <textarea id="extra" name="extra" rows="3" cols="40"></textarea>   
+    <textarea id="extra" name="extra" rows="3" cols="40">If you want soemtext to appear in a textarea field, add it between tags </textarea>  </textarea>   
+    
+</section>
+
+    <h3>Submit Form Button</h3>
+    <!--  -->
+    <section class="submission">
+        <input type="submit" value="It says here Submit">
+    </section>
+
+
+    <!--  
+    <section> - An element used to represent a standalone section for which a more specific element can’t be found. This usually has a heading as a child element. A section should make sense in the outline of a document, whereas <div> is used for styling. 
+
+    class - A global attribute that has a list of classes pertaining to an element. You’ll see this used with <section> in the practice.
+        
+    <hr> - An element that is used to a break between paragraph-level elements. It is displayed as a horizontal line. This is also a semantic element.
+    
+    REVIEW:
+    In this lesson we went over:
+    The purpose of a <form> is to allow users to input information and send it.
+    The <form>‘s action attribute determines where the form’s information goes.
+    The <form>‘s method attribute determines how the information is sent and processed.
+    To add fields for users to input information we use the <input> element and set the type attribute to a field of our choosing:
+    Setting type to "text" creates a single row field for text input.
+    Setting type to "password" creates a single row field that censors text input.
+    Setting type to "number" creates a single row field for number input.
+    Setting type to "range" creates a slider to select from a range of numbers.
+    Setting type to "checkbox" creates a single checkbox which can be paired with other checkboxes.
+    Setting type to "radio" creates a radio button that can be paired with other radio buttons.
+    Setting type to "list" will pair the <input> with a <datalist> element if the id of both are the same.
+    Setting type to "submit" creates a submit button.
+    A <select> element is populated with <option> elements and renders a dropdown list selection.
+    A <datalist> element is populated with <option> elements and works with an <input> to search through choices.
+    A <textarea> element is a text input field that has a customizable area.
+    When a <form> is submitted, the name of the fields that accept input and the value of those fields are sent as name=value pairs. 
+    -->
+
+    <h1>FORM VALIDATION</h1>
+    <p>Validation is the concept of checking user provided data against the required data.</p>
+    <p>server-side validation, client-side validation</p>
+
+    <h3>** Requiring an Input</h3>
+    <!-- For fields in our <form>s which are not optional, we can add the required attribute to an <input> element. -->
+    <form action="check.html" method="GET">
+        <label for="guess">Enter a number between 1-10:</label>
+        <br>
+        <input id="guess" type="number" name="guess" required>
+        <br>
+        <input type="submit" id="submission" value="Submit">
+    </form>    
+
+    <h3>** Set a Minimum and Maximum</h3>
+    <!-- we use the min attribute and assign a value. 
+    to set a maximum acceptable value, we assign the max attribute a value.-->
+    <form action="check.html" method="GET">
+        <label for="guess">Enter a number between 1-10:</label>
+        <br>
+        <!--Add the min and max attribute to the input-->
+        <input type="number" name="guess" id="guess" required min="1" max="10">
+        <br>
+        <input type="submit" id="submission" value="Submit">
+    </form>
+
+    <h3>** Checking Text Length</h3>
+    <!-- We use minlength & maxlength attributes-->
+    <form action="submission.html" method="GET">
+        <label for="username">Username:</label>
+        <br>
+        <input id="username" name="username" type="text"  minlength="3" maxlength="15" required>
+        <br>
+        <label for="pw">Password:</label>
+        <br>
+        <input id="pw" name="pw" type="password" minlength="3" maxlength="18" required>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+
+    <h3>** Matching a Pattern </h3>
+    <!-- we use the pattern attribute and assign it a regular expression, or regex. 
+    Regular expressions are a sequence of characters that make up a search pattern. 
+    If the input matches the regex, the form can be submitted.
+    -->
+    <form action="/example.html" method="POST">
+        <label for="payment">Credit Card Number (no spaces):</label>
+        <br>
+        <input id="payment" name="payment" type="text" required pattern="[0-9]{14,16}">
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="submission.html" method="GET">
+        <label for="username">Username:</label>
+        <br>
+		<input id="username" name="username" type="text" required minlength="3" maxlength="15" pattern="[a-zA-Z0-9]+">
+        <br>
+        <label for="pw">Password:</label>
+        <br>
+		<input id="pw" name="pw" type="password" required minlength="8" maxlength="15">
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+
+    <!-- Review:
+        Let’s quickly recap:
+        Client-side validations happen in the browser before information is sent to a server.
+        Adding the required attribute to an input related element will validate that the input field has information in it.
+        Assigning a value to the min attribute of a number input element will validate an acceptable minimum value.
+        Assigning a value to the max attribute of a number input element will validate an acceptable maximum value.
+        Assigning a value to the minlength attribute of a text input element will validate an acceptable minimum number of characters.
+        Assigning a value to the maxlength attribute of a text input element will validate an acceptable maximum number of characters.
+        Assigning a regex to pattern matches the input to the provided regex.
+        If validations on a <form> do not pass, the user gets a message explaining why and the <form> cannot be submitted.
+     -->
+
+     <h2>Project Form a Story </h2>
+     <section>
+        <section id="top">
+            <img src="https://content.codecademy.com/courses/learn-html-forms/formAStoryLogo.svg" alt="Form A Story Logo">
+          </section>
+      
+          <section id="main">
+            <h1>Complete the Form -<br> Complete the Story!</h1>
+            <hr>
+            <form action="story.html" method="GET">
+              
+              <label for="animal-1">Animal:</label>
+              <input id="animal-1" type="text" name="aimal-1" required>
+              <br>
+              <label for="animal-2">Another Animal:</label>
+              <input id="animal-2" type="text" name="animal-2" required>
+              <br>
+              <label for="animal-3">One more Animal:</label>
+              <input id="animal-3" type="text" name="animal-3" required>
+              <br>
+              <label for="adj-1">Adjective (past tense):</label>
+              <input id="adj-1" type="text" required>
+              <label for="verb-1">Verb (ends in -ing):</label>
+              <input id="verb-1" type="text" required>
+              <label  for="num-1">Number:</label>
+              <input id="num-1" type="number" required>
+              <br>
+              <span>Yes or No:</span>
+              <br>
+              <input id="yes"  type="radio" name="answer" value="yes" required>
+              <label for="yes">Yes</label>
+              <br>
+              <input id="no"  type="radio" name="answer" value="no" required>
+              <label for="no">No</label>
+              <br>
+              <label for="speed" >Relative speed (ends in -er):</label>
+              <select id="speed" name="speed" required>
+                <option value="Fast">Fast</option>
+                <option value="Faster">Faster</option>
+                <option value="Chetah">Chetah</option>
+              </select>
+              <br>
+              <label for="quote">Motivational Quote:</label>  
+              <input  id="quote" name="quote" tye="text" required list="quote-choices">
+              <datalist id="quote-choices">
+                <option value="winner gets ice cream!"></option>
+              </datalist>
+             <br>
+            <input type="submit" value="Form My Story!">
+            <label for="message"></label>
+            <textarea id="message" name="message" required rows="8" cols="40"></textarea>
+            <br>
+            </form>  
+          </section>     
+
+
+     </section>
+  </body>
+</html>

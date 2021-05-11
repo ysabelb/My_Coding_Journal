@@ -1,0 +1,241 @@
+/* 
+
+SYNTAX AND SELECTORS
+CSS Anatomy
+selector , declaration block, declaration, property, value
+p {color:blue;}                             color: blue 
+
+Inline Styles
+<p style='color: red;'>I'm learning to code!</p>
+
+
+Internal Stylesheet
+<head>
+  <style>
+    p {
+      color: red;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+External Stylesheet
+Linking the CSS File : <link href="style.css" rel="stylesheet" >
+
+
+Review
+
+The basic anatomy of CSS syntax written for both inline styles and stylesheets.
+Some commonly used CSS terms, such as ruleset, selector, and declaration.
+CSS inline styles can be written inside the opening HTML tag using the style attribute.
+Inline styles can be used to style HTML, but it is not the best practice.
+An internal stylesheet is written using the <style> element inside the <head> element of an HTML file.
+Internal stylesheets can be used to style HTML but are also not best practice.
+An external stylesheet separates CSS code from HTML, by using the “.css”.file extension.
+External stylesheets are the best approach when it comes to using HTML and CSS.
+External stylesheets are linked to HTML using the <link> element.
+
+
+SELECTORS
+Type
+the type selector matches the type of the element in the HTML document.
+The element type is for ex.  p, which comes from the HTML <p> tag.
+the type selector is sometimes referred to as the tag name or element selector.
+
+
+Universal
+the universal selector selects all elements of any type.
+The universal selector uses the * character in the same place where you specified the type selector in a ruleset, 
+like so:
+* { 
+  font-family: Verdana;
+}
+every text element on the page will have its font changed to Verdana.
+
+
+Class
+HTML:
+<p class='brand'>Sole Shoe Company</p>
+
+CSS:
+.brand { 
+}
+
+
+Multiple Classes
+HTML:
+<h1 class='green bold'> ... </h1>
+
+CSS:
+.green {
+  color: green;
+}
+ 
+.bold {
+  font-weight: bold;
+}
+
+
+
+ID
+In contrast to class which accepts multiple values, and can be used broadly throughout an HTML document, 
+an element’s id can only have a single value, and only be used once per page.
+HTML: 
+<h1 id='large-title'> ... </h1>
+CSS: 
+#large-title {
+
+}
+
+
+
+Attribute
+Some familiar attributes may be href and src, class and id!
+Attributes can be selected similarly to types, classes, and IDs.
+[href]{
+   color: magenta;
+}
+would target all elements with an href attribute and set the color to magenta.
+
+
+Adding type and/or attribute values by using type[attribute*=value].
+Selects an element where the attribute contains any instance of the specified value. 
+HTML:
+<img src='/images/seasons/cold/winter.jpg'>
+<img src='/images/seasons/warm/summer.jpg'>
+
+CSS: 
+img[src*='winter'] {
+  height: 50px;
+}
+ 
+img[src*='summer'] {
+  height: 100px;
+}
+
+
+Pseudo-class
+:focus, :visited, :disabled, and :active are all pseudo-classes.
+Factors such as user interaction, site navigation, 
+and position in the DOM can all give elements a different state with pseudo-class.
+A pseudo-class can be attached to any selector. 
+It is always written as a colon : followed by a name. 
+
+p:hover {
+  color: lime;
+}
+
+
+Classes and IDs
+While classes are meant to be used many times, an ID is meant to style only one element. 
+As you’ll learn in the next exercise, IDs override the styles of types and classes. 
+Since IDs override these styles, they shouldnt be used sparingly and only on elements that need to always appear the same.
+
+
+Specificity
+IDs are the most specific selector in CSS, followed by classes, and finally, type.
+If an ID attribute (and selector) were added to the code above, 
+the styles within the ID selector’s body would override all other styles for the heading.
+To make styles easy to edit, it’s best to style with a type selector, if possible. If not, add a class selector. 
+If that is not specific enough, then consider using an ID selector.
+
+HTML:  
+<h5 class='author-class' id='author-id'>By: Stacy Gray</h5>
+
+CSS:
+h5 {
+  color: yellow;
+}
+ 
+.author-class {
+  color: pink;
+}
+ 
+#author-id {
+  color: cornflowerblue;
+}
+
+
+Chaining
+This is done by combining multiple selectors, which we will refer to as chaining. 
+For instance, if there was a special class for <h1> elements, the CSS would look like below:
+h1.special {
+ 
+}
+would select only the <h1> elements with a class of special
+
+
+Descendant Combinator
+CSS also supports selecting elements that are nested within other HTML elements, also known as descendants.
+HTMl: 
+<ul class='main-list'>
+  <li> ... </li>
+</ul>
+
+CSS: 
+.main-list li {
+ 
+}
+li is the final selector.
+
+
+Chaining and Specificity
+Adding more than one tag, class, or ID to a CSS selector increases the specificity of the CSS selector.
+
+p {
+  color: blue;
+} 
+.main p {
+  color: red;
+}
+
+li h4 {
+  color: gold;
+}
+
+h4 {
+  color: dodgerblue;
+}
+
+
+Multiple Selectors
+h1 {
+  font-family: Georgia;
+}
+.menu {
+  font-family: Georgia;
+}
+Instead of writing font-family: Georgia twice for two selectors, 
+we can separate the selectors by a comma to apply the same style to both,
+
+h1, 
+.menu {
+  font-family: Georgia;
+}
+
+The !important rule on the a ruleset with color: red 
+will override even a more specific selector like .main-content a.
+body {
+ color: green;
+}
+.main-content a {
+  color: blue;
+}
+a {
+ color: red !important;
+}
+
+Review:
+CSS can select HTML elements by type, class, ID, and attribute.
+All elements can be selected using the universal selector.
+An element can have different states using the pseudo-class selector.
+Multiple CSS classes can be applied to one HTML element.
+Classes can be reusable, while IDs can only be used once.
+IDs are more specific than classes, and classes are more specific than type. That means IDs will override any styles from a class, and classes will override any styles from a type selector.
+Multiple selectors can be chained together to select an element. This raises the specificity but can be necessary.
+Nested elements can be selected by separating selectors with a space.
+Multiple unrelated selectors can receive the same styles by separating the selector names with commas.
+
+*/
+
+

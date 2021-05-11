@@ -1,0 +1,86 @@
+/* 
+VISUAL RULES 
+
+Introduction To Visual Rules
+
+Font Family
+The font specified must be installed on the user’s computer or downloaded with the site.
+Web safe fonts are a group of fonts supported across most browsers and operating systems.
+Unless you are using web safe fonts, the font you choose may not appear the same between all browsers and operating systems.
+When the name of a typeface consists of more than one word, it’s a best practice to enclose the typeface’s name in quotes, 
+
+Font Size
+p {
+  font-size: 18px;
+}
+
+Font Weight
+p {
+  font-weight: bold;
+}
+The font-weight property has another value: normal
+
+
+Text Align
+h1 {
+  text-align: right;
+}
+left — aligns text to the left side of its parent element, which in this case is the browser.
+center — centers text inside of its parent element.
+right — aligns text to the right side of its parent element.
+justify— spaces out text in order to align with the right and left side of the parent element.
+
+
+Color and Background Color
+Color can affect the following design aspects:
+Foreground color
+Background color
+h1 {
+  color: red;
+  background-color: blue;
+}
+
+
+Opacity
+It’s measured from 0 to 1, with 1 representing 100%, or fully visible and opaque, and 0 representing 0%, 
+or fully invisible.
+.overlay {
+  opacity: 0.5;
+}
+overlay element would be 50% visible, letting whatever is positioned behind it show through.
+
+Background Image
+.main-banner {
+  background-image: url('https://www.example.com/image.jpg');
+}
+
+.main-banner {
+  background-image: url('images/mountains.jpg');
+}
+The url can be a file within your project, or it can be a link to an external site. 
+
+
+
+Important
+can be applied to specific declarations, instead of full rules. 
+It will override any style no matter how specific it is. 
+As a result, it should almost never be used. Once !important is used, it is very hard to override.
+p {
+  color: blue !important;
+}
+ 
+.main p {
+  color: red;
+}
+
+Review Visual Rules: 
+The font-family property defines the typeface of an element.
+font-size controls the size of text displayed.
+font-weight defines how thin or thick text is displayed.
+The text-align property places text in the left, right, or center of its parent container.
+Text can have two different color attributes: color and background-color. color defines the color of the text, while background-color defines the color behind the text.
+CSS can make an element transparent with the opacity property.
+CSS can also set the background of an element to an image with the background-image property.
+The !important flag will override any style, however it should almost never be used, as it is extremely difficult to override.
+
+*/
