@@ -1,0 +1,104 @@
+/* 
+Introduction to Color
+Colors in CSS can be described in three different ways:
+Named colors — English words that describe colors, also called keyword colors
+RGB — numeric values that describe a mix of red, green, and blue
+HSL — numeric values that describe a mix of hue, saturation, and lightness
+
+These colors are exactly the same as hex, but with a different syntax and a different number system.
+it’s good to choose one and be consistent throughout your CSS, 
+because it’s easier to compare hex to hex and RGB to RGB.
+
+Foreground vs Background
+color - this property styles an element’s foreground color.
+background-color - this property styles an element’s background color.
+h1 {
+  color: red;
+  background-color: blue;
+}
+the text of the heading will appear in red, and the background of the heading will appear blue.
+
+
+Hexadecimal
+A hex color begins with a hash character (#) which is followed by three or six characters. 
+the hexadecimal number system has 16 digits (0-15) instead of 10 (0-9) like in the standard decimal system. 
+To represent 10-15, we use A-F
+
+darkseagreen: #8FBC8F
+sienna:       #A0522D
+saddlebrown:  #8B4513
+brown:        #A52A2A
+black:        #000000 or #000
+white:        #FFFFFF or #FFF
+aqua:         #00FFFF or #0FF
+
+
+RGB Colors
+h1 {
+  color: rgb(23, 45, 23);
+}
+The first number represents the amount of red, the second is green, and the third is blue. 
+
+
+Hex and RGB
+In both hex and RGB, we have three values, one for each color. Each can be one of 256 values. 
+Specifically, 256 * 256 * 256 = 16,777,216. 
+That is the amount of colors we can now represent.
+Compare that to the roughly 140 named CSS colors!
+These new colors are a lot closer to the real-life colors
+
+Hue, Saturation, and Lightness
+abbreviated as HSL
+
+color: hsl(120, 60%, 70%);
+The first number represents the degree of the hue, and can be between 0 and 360. 
+The second and third numbers are percentages representing saturation and lightness respectively.
+
+Hue is the first number. It refers to an angle on a color wheel. Red is 0 and around to 360
+Saturation refers to the intensity or purity of the color. The saturation increases towards 100% 
+Lightness refers to how light or dark the color is. Halfway, or 50%, is normal lightness. 
+Imagine a sliding dimmer 100% lighter - 0% darker 
+
+
+Opacity and Alpha
+we change the opacity, or the amount of transparency, 
+of some colors so that some or all of the bottom elements are visible through a covering element.
+
+color: hsla(34, 100%, 50%, 0.1);
+Use hsla instead of hsl, and four values instead of three.
+The fourth value is the alpha. This last value is sometimes called opacity, decimal number from zero to one.
+think of the alpha value as, “the amount of the background to mix with the foreground”
+
+
+color: rgba(234, 45, 98, 0.33);
+The RGB color scheme has a similar syntax for opacity, rgba. 
+Again, the first three values work the same as rgb and the last value is the alpha. Here’s an example:
+
+hex colors can also have an alpha value. 
+By adding a two-digit hexadecimal value to the end of the six-digit representation
+Hex opacity ranges from 00 (transparent) to FF (opaque).
+
+Alpha can only be used with HSL, RGB, and hex colors;
+color: transparent;
+
+
+Review 
+There are four ways to represent color in CSS:
+
+Named colors—there are more than 140 named colors, which you can review here.
+
+Hexadecimal or hex colors
+Hexadecimal is a number system with has sixteen digits, 0 to 9 followed by “A” to “F”.
+Hex values always begin with # and specify values of red, blue, and green using hexadecimal numbers such as #23F41A.
+Six-digit hex values with duplicate values for each RGB value can be shorted to three digits.
+
+RGB
+RGB colors use the rgb() syntax with one value for red, one value for blue and one value for green.
+RGB values range from 0 to 255 and look like this: rgb(7, 210, 50).
+
+HSL
+HSL stands for hue (the color itself), saturation (the intensity of the color), and lightness (how light or dark a color is).
+Hue ranges from 0 to 360 and saturation and lightness are both represented as percentages like this: hsl(200, 20%, 50%).
+You can add opacity to color in RGB and HSL by adding a fourth value, a, which is represented as a percentage.
+
+*/

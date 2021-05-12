@@ -1,0 +1,165 @@
+/* 
+Flow of HTML
+In this lesson, you will learn five offset properties for adjusting the position of HTML elements in the browser:
+position
+display
+z-index
+float
+clear
+
+Position
+The position property can take one of five values:
+static - the default value (it does not need to be specified). static simply refers to the default behavior.
+relative
+absolute
+fixed
+sticky
+
+
+Position: Relative
+top - moves the element down from the top.
+bottom - moves the element up from the bottom.
+left - moves the element away from the left side (to the right).
+right - moves the element away from the right side (to the left).
+.green-box {
+  background-color: green;
+  position: relative;
+  top: 50px;
+  left: 120px;
+}
+
+
+Position: Absolute
+all other elements on the page will ignore the element and act like it is not present on the page. 
+header {
+  background-color: darkgreen;
+  border-bottom: 1px solid darkgblue;
+  position: absolute;
+  width:100%;
+}
+
+Position: Fixed
+We can fix an element to a specific position on the page (regardless of user scrolling) by setting its position to fixed, 
+and accompanying it with the familiar offset properties top, bottom, left, and right.
+.title {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+Position: Sticky
+keeps an element in the document flow as the user scrolls, but sticks to a specified position until it reaches the 
+bottom of its parent container where it will “unstick” and rejoin the flow of the document.
+
+.box-bottom {
+  background-color: darkgreen;
+  position: sticky;
+  top: 240px;
+}
+
+
+Z-Index
+controls how far back or how far forward an element should appear on the web page when elements overlap.
+property does not work on static elements. 
+has a default z-index value of 0
+.blue-box {
+  background-color: blue;
+  position: relative;
+  z-index: 1;
+}
+ 
+.green-box {
+  background-color: green;
+  position: relative;
+  top: -170px;
+  left: 170px;
+}
+
+
+Inline Display
+Inline elements have a box that wraps tightly around their content, 
+only taking up the amount of space necessary to display their content 
+<em>, <strong>, and <a>
+inline elements cannot be altered in size with the height or width.
+the display property provides the ability to make any element an inline element. 
+This includes elements that are not inline by default such as paragraphs, divs, and headings.
+
+
+Display: Block
+block-level elements. These elements fill the entire width of the page by default, 
+but their width property can also be set. ex. (<h1> through <h6>), <p>, <div> and <footer>
+strong {
+  display: block;
+}
+all <strong> elements will be displayed on their own line
+
+
+Display: Inline-Block
+Inline-block display combines features of both inline and block elements. 
+we can specify their dimensions using the width and height.
+HTML: 
+<div class="rectangle">
+  <p>I’m a rectangle!</p>
+</div>
+<div class="rectangle">
+  <p>So am I!</p>
+</div>
+<div class="rectangle">
+  <p>Me three!</p>
+</div>
+CSS: 
+.rectangle {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+}
+
+Float
+Is simply moving an element as far left or as far right as possible in the container.
+commonly used for wrapping text around an image .
+left - moves, or floats, elements as far left as possible.
+right - moves elements as far right as possible.
+This works for static and relative positioned elements.
+Must have a width specified, as in the example above. 
+Otherwise, the element will assume the full width of its containing element, 
+
+.orange-section {
+  background-color: orange;
+  width: 50%;
+  float: right;
+}
+
+float is used to float multiple elements at once. 
+
+Clear
+when multiple floated elements have different heights, elements can “bump” into each other .
+The clear property specifies how elements should behave 
+left—the left side of the element will not touch any other element within the same containing element.
+right—the right side of the element will not touch any other element within the same containing element.
+both—neither side of the element will touch any other element within the same containing element.
+none—the element can touch either side.
+
+div {
+  width: 200px;
+  float: left;
+}
+ 
+div.special {
+  clear: left;
+}
+
+Review: Layout
+The position property allows you to specify the position of an element.
+When set to relative, an element’s position is relative to its default position on the page.
+When set to absolute, an element’s position is relative to its closest positioned parent element. It can be pinned to any part of the web page, but the element will still move with the rest of the document when the page is scrolled.
+When set to fixed, an element’s position can be pinned to any part of the web page. The element will remain in view no matter what.
+When set to sticky, an element can stick to a defined offset position when the user scrolls its parent container.
+The z-index of an element specifies how far back or how far forward an element appears on the page when it overlaps other elements.
+The display property allows you to control how an element flows vertically and horizontally a document.
+inline elements take up as little space as possible, and they cannot have manually adjusted width or height.
+block elements take up the width of their container and can have manually adjusted heights.
+inline-block elements can have set width and height, but they can also appear next to each other and do not take up their entire container width.
+The float property can move elements as far left or as far right as possible on a web page.
+You can clear an element’s left or right side (or both) using the clear property.
+
+ */
