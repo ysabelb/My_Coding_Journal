@@ -1,0 +1,132 @@
+/* 
+Typography
+
+**** Font Family
+it is recommended to use quotation marks (' ') to group the words together, like so:
+h1 {
+  font-family: 'Times New Roman';
+}
+
+There is a selection of fonts that will appear the same across all browsers and operating systems. 
+Check them out online 
+When you specify a group of fonts, you have what is known as a font stack. 
+the browser will first try to use the first font then the next in line since they are similar. 
+serif have more details in the strokes and sans-serif dont. they are also keyword values that can be added as a final fallback font if nothing else in the font stack is available.
+
+
+**** Font Weight
+font-weight property controls how bold or thin text appears.
+It can be specified with keywords or numerical values.
+
+bold: Bold font weight.
+normal: Normal font weight. This is the default value.
+lighter: One font weight lighter than the element’s parent value.
+bolder: One font weight bolder than the element’s parent value
+A font weight of 400 is equal to the keyword value normal, and a font weight of 700 is equal to bold.
+Look up the font you are using to see which font-weight values are available.
+
+.left-section {
+  font-weight: 700;
+}
+ 
+.right-section {
+  font-weight: bold; 
+}
+
+
+**** Font Style
+The italic value causes text to appear in italics. The font-style property also has a normal value which is the default.
+h3 {
+  font-style: italic;
+}
+
+
+**** Text Transformation
+either all uppercase or lowercase with the text-transform property. ex. for a breaking news section of a website. 
+h1 {
+  text-transform: uppercase;
+}
+
+**** Text Layout
+Ways how text can be displayed or laid out within the element’s container.
+
+The letter-spacing property takes length values in units, such as 2px or 0.5em.
+p {
+  letter-spacing: 2px;
+}
+
+The word-spacing property also takes length values in units, such as 3px or 0.2em.
+h1 {
+  word-spacing: 0.3em;
+}
+
+Line height values can be a unitless number, such as 1.2, or a length value, such as 12px, 5% or 2em.
+p {
+  line-height: 1.4;
+}
+
+the <h1> element is aligned to the right side, instead of the default left.
+h1 {
+  text-align: right;
+}
+
+
+**** Web Fonts
+Free font services, like Google Fonts and Adobe Fonts, host fonts that you can link to from your HTML document with a provided <link> element.
+You can create a @font-face ruleset in your CSS stylesheet to link to the relative path of the font file from paid font distributors like fonts.com 
+
+
+**** Web Fonts Using <link>
+Navigate to Google Fonts and select the “Space Mono” font. 
+In the list of style variations, find “Regular 400” and click “+ Select this style”.
+
+Copy the provided <link> element, and paste it into the <head> element inside index.html.
+<head>
+  <!-- Add the link element for Google Fonts along with other metadata -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<head>
+
+CSS:
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+**** Web Fonts Using @font-face
+fonts can be downloaded just like any other file on the web. They come in a few different file formats, such as:
+OTF (OpenType Font)
+TTF (TrueType Font)
+WOFF (Web Open Font Format)
+WOFF2 (Web Open Font Format 2)
+progression of standards for how fonts will work with different browsers, with WOFF2 being the most progressive.
+When you have the files you need, move them to a folder inside your website’s working directory, 
+and you’re ready to use them in a @font-face ruleset!
+@font-face {
+  font-family: 'MyParagraphFont';
+  src: url('fonts/Roboto.woff2') format('woff2'),
+       url('fonts/Roboto.woff') format('woff'),
+       url('fonts/Roboto.tff') format('truetype')
+}
+
+CSS:  
+p {
+  font-family: 'MyParagraphFont', sans-serif;
+}
+
+
+**** Review
+Typography is the art of arranging text on a page.
+Text can appear bold or thin with the font-weight property.
+Text can appear in italics with the font-style property.
+The vertical spacing between lines of text can be modified with the line-height property.
+Serif fonts have extra details on the ends of each letter. Sans-Serif fonts do not.
+Fallback fonts are used when a certain font is not installed on a user’s computer.
+The word-spacing property changes how far apart individual words are.
+The letter-spacing property changes how far apart individual letters are.
+The text-align property changes the horizontal alignment of text.
+Google Fonts provides free fonts that can be used in an HTML file with the <link> tag or the @font-face property.
+Local fonts can be added to a document with the @font-face property and the path to the font’s source.
+
+
+*/
