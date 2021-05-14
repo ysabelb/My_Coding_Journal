@@ -1,0 +1,102 @@
+/* 
+**** CSS Transitions
+When visual appearances of various elements can change
+We can control the following four aspects of an element’s transition:
+
+Which CSS properties transition
+How long a transition lasts
+How much time there is before a transition begins
+How a transition accelerates
+
+
+
+**** Duration
+we must specify two of the four aspects:
+The property that we want to transition.
+The duration of the transition.
+
+a {
+  transition-property: color;
+  transition-duration: 1s;
+}
+
+Color values, like color and background-color, will blend to a new color.
+Length values like font-size, width, and height will grow or shrink.
+Duration is specified in seconds or milliseconds, such as 3s, 0.75s, 500ms. 
+The default value is 0s, or instantaneous, as if there is no transition.
+
+**** Timing Function
+transition-timing-function. The timing function describes the pace of the transition.
+Other valid values include:
+
+ease-in — starts slow, accelerates quickly, stops abruptly
+ease-out — begins abruptly, slows down, and ends slowly
+ease-in-out — starts slow, gets fast in the middle, and ends slowly
+linear — constant speed throughout
+
+.game .gazelle {
+    transition-property: color;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+**** Delay
+.game .gazelle {
+    transition-property: width;
+    transition-duration: 7ß50ms;
+    transition-delay: 250ms;
+}
+ a change in the width of the element will start after a quarter of a second, 
+ and it will animate over three quarters of a second.
+
+**** Shorthand
+
+transition-property: color;
+transition-duration: 1.5s;
+transition-timing-function: linear;
+transition-delay: 0.5s;
+
+OR
+
+transition: color 1.5s linear 0.5s;
+The properties must be specified in this order: 
+transition-property, 
+transition-duration, 
+transition-timing-function, 
+transition-delay.
+
+
+
+**** Combinations
+add a comma (,) before the semicolon (;) in your rule: 
+.{
+transition: color 1s linear,
+font-size 750ms ease-in 100ms;
+}
+The text color transitions over one second with linear timing and no delay. 
+At the same time, the font size transitions over 750 milliseconds with an ease-in timing and a 100 millisecond delay. 
+
+.button  {
+    transition: width 750ms ease-in 200ms,
+    left 500ms ease-out 450ms,
+    font-size 950ms linear;
+ 
+}
+
+**** All
+.{
+transition: all 1.5s linear 0.5s;
+}
+In this example, any change will be animated over one and a half seconds after a half-second delay with linear timing.
+
+**** Review
+CSS Transitions have 4 components:
+
+A property that will transition.
+The duration which describes how long the transition takes.
+The delay to pause before the transition will take place.
+The timing function that describes the transition’s acceleration.
+Many properties’ state changes can be transitioned, including color, background color, font size, width, and height. 
+
+
+*/

@@ -1,0 +1,250 @@
+/* GRID ESSENTIALS
+
+*** Introduction to Grids
+The grid can be used to layout entire web pages. Whereas Flexbox is mostly useful for positioning items in a one-dimensional layout
+
+
+*** Creating a Grid
+You need to have both a grid container and grid items.
+grid — for a block-level grid.
+inline-grid — for an inline grid.
+(property display NEEDS to be assigned on the parent)
+
+.grid {
+  display: grid;
+}
+
+.container {
+  display: grid;
+}
+
+
+<body>
+  <div class="grid">
+    <div class="box a">A</div>
+    <div class="box b">B</div>
+    <div class="box c">C</div>
+    <div class="box d">D</div>
+    <div class="box e">E</div>
+    <div class="box f">F</div>
+    <div class="box g">G</div>
+  </div>
+</body>
+
+CSS:  
+
+.grid{
+    display:grid 
+}
+.box{
+}
+.a {
+}   
+
+*** Creating Columns
+By default, grids contain only one column.
+To change this, we need to explicitly define the number of rows and columns in our grid.
+The columns will need a width reference. 
+
+.grid {
+  display: grid;
+  width: 500px;
+  grid-template-columns: 100px 200px;
+}
+
+.grid {
+  display: grid;
+  width: 1000px;
+  grid-template-columns: 20% 50%;
+}
+
+.grid {
+  display: grid;
+  width: 100px;
+  grid-template-columns: 20px 40% 60px;
+}
+Overflow out of grid 
+
+*** Creating Rows
+.grid {
+  display: grid;
+  height: 500px;
+  grid-template-rows: 10% 20% 600px;
+}
+
+
+
+.grid {
+  display: grid;
+  width: 1000px;
+  height: 500px;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 10% 20% 600px;
+}
+When using percentages in these two properties, remember that rows are defined as a percentage of the grid’s height, and columns are defined as a percentage of its width.
+
+
+*** Grid Template
+.grid {
+  display: grid;
+  width: 1000px;
+  height: 500px;
+  grid-template: 200px 300px / 20% 10% 70%;
+}
+When using grid-template, the values before the slash will determine the size of each row. The values after the slash determine the size of each column
+
+
+*** Fraction
+relative sizing unit — fr
+.grid {
+  display: grid;
+  width: 1000px;
+  height: 400px;
+  grid-template: 2fr 1fr 1fr / 1fr 3fr 1fr;
+}
+The first row gets two parts, 
+the second row gets one, and the third row gets one. 
+Therefore the first row is 200 pixels tall, 
+and the second and third rows are 100 pixels tall.
+
+The first column gets one-fifth of the space, 
+the second column gets three-fifths, 
+and the last column gets one-fifth. 
+Since the total width is 1000 pixels, this means that the columns will have widths of 
+200 pixels, 600 pixels, and 200 pixels respectively.
+
+
+It is possible to use fr with other units as well. When this happens, each fr represents a fraction of the available space.
+.grid {
+  display: grid;
+  width: 100px;
+  grid-template-columns: 1fr 60px 1fr;
+}
+
+
+
+*** Repeat
+the grid have three columns that are each 100 pixels wide.
+grid-template-columns: 100px 100px 100px;
+OR
+.grid {
+  display: grid;
+  width: 300px;
+  grid-template-columns: repeat(3, 100px);
+}
+
+
+
+
+grid-template-columns: repeat(2, 20px 50px)
+the second parameter of repeat() can have multiple values. 
+four columns where the first and third columns will be 20 pixels wide and the second and fourth will be 50 pixels wide.
+
+*** minmax
+For when resizing browswers
+.grid {
+  display: grid;
+  grid-template-columns: 100px minmax(100px, 500px) 100px;
+}
+The second column will always be between 100 and 500 pixels wide.
+The first and third columns will always be 100 pixels wide, no matter the size of the grid. 
+
+*** Grid Gap
+grid-row-gap: 20px;
+grid-column-gap: 5px;
+OR
+
+grid-gap: 20px 5px;
+Unlike other CSS grid properties, this shorthand does not take a / between values!
+
+
+
+*** Grid Items
+we can drastically change the look of our grid by making grid items take up more than one row and one column
+
+*** Multiple Row Items
+we are no longer applying CSS to the outer grid container; we’re adding CSS to the elements sitting inside the grid
+
+.grid {
+  display: grid;
+  border: 2px blue solid;
+  height: 500px;
+  width: 500px;
+  grid-template: repeat(4, 1fr 2fr) / repeat(4, 3fr 2fr);
+  grid-gap: 5px;
+}
+
+.a {
+  grid-row-start: 5; 
+  grid-row-end: 7;
+}
+item begins in 5th row and ends in 6th row. 
+
+
+*** Grid Row
+.item {
+  grid-row-start: 4;
+  grid-row-end: 6;
+}
+OR
+.item {
+  grid-row: 4 / 6;
+}
+it will also include the grid-gap if any exists.
+
+
+*** Grid Column
+.item {
+  grid-column: 4 / 6;
+}
+
+
+If you know where you want your grid item to start and how long it should be, use span!
+.item {
+  grid-column: 4 / span 2;
+}
+the item element to begin in column four and take up two columns of space.
+
+.item {
+  grid-column-start: 4;
+  grid-column-end: span 2;
+}
+.item {
+  grid-column-start: span 2;
+  grid-column-end: 6;
+}
+
+*** Grid Area
+grid-area. will set the starting and ending positions for both the rows and columns of an item.
+
+.item {
+  grid-area: 2 / 3 / 4 / span 5;
+}
+The order is important! 
+1 grid-row-start
+2 grid-column-start
+3 grid-row-end
+4 grid-column-end
+the item will occupy rows two and three and columns three through eight.
+
+.c {
+  grid-area: 6 / 8 / span 3 / span 1;
+}
+inside the .c ruleset, use grid-area to make the element start at row six and column eight. Then have it take up three rows and one column. Use span for both ending values.
+
+*** Review
+grid-template-columns defines the number and sizes of the columns of the grid
+grid-template-rows defines the number and sizes of the rows of the grid
+grid-template is a shorthand for defining both grid-template-columns and grid-template-rows in one line
+grid-gap puts blank space between rows and/or columns of the grid
+grid-row-start and grid-row-end makes elements span certain rows of the grid
+grid-column-start and grid-column-end makes elements span certain columns of the grid
+grid-area is a shorthand for grid-row-start, grid-column-start, grid-row-end, and grid-column-end, all in one line
+
+cssgrid-generator.netlify.app
+w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named
+
+
+
+
+*/
