@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    HTML
+
+    <!-- Target -->
+    <a href="https://.." target="_blank">The Brown Bear</a>
+    
+    HTML files are often stored in the same folder, as shown in the example above. If the browser is currently displaying index.html, 
+    it also known that about.html and contact.html are in the same folder. 
+    Because the files are stored in the same folder, we can link web pages together using a relative path.
+    project-folder./about.html
+    project-folder./contact.html
+    project-folder./index.html
+    
+    <a href="./contact.html">Contact</a>
+    The ./ in ./index.html tells the browser to look for the file in the current folder.
+    
+  
+    <!-- <span> </span> ?? -->
+    Its an inline container. which does not repesent anything. 
+    It can be used to group elements for styling purposes( using the class or id attributes).
+    It should be used only when no other semantic element is appropiate. 
+    <span> </span> is very much like a <div></div> element, but div is a block element whereas span is an inline element. 
+
+    <p>Add the 
+        <span class="ingredient">basil</span>,
+        <span class="ingredient">pine nuts</span>, and
+        <span class="ingredient">garlic</span> to a blender and blend into a paste. 
+    </p>
+    
+    <!-- 
+    CSS
+    span.ingredient {
+      color: #00;
+    }
+    OUTPUT: all ingredients in red color font. 
+    -->
+
+  
+
+    <p>Gradually add the <span class="ingredient">Olive Oil</span> while running the blender slowly. 
+    </p>
+    
+    Anchor a link to am img  
+    <a href="https:.." target="_blank">
+    <img src="https:.." alt="A red prickly pear fruit"/>
+    </a>
+    
+    
+    Linking to Same Page
+    In order to link to a target on the same page, we must give the target an id, like this:
+    <p id="top">This is the top of the page!</p>
+    <h1 id="bottom">This is the bottom! </h1>
+    
+    An id should be descriptive to make it easier to remember the purpose of a link. The target link is a string containing the # character and the target element’s id.
+    <ol>
+      <li><a href="#top">Top</a></li>
+      <li><a href="#bottom">Bottom</a></li>
+    </ol>
+    
+    <a href="#contact"> <img src ="https:...jpg"></a>
+    
+    
+   
+   <!-- REVIEW
+    Let’s review what you’ve learned this lesson:
+    
+    * The <!DOCTYPE html> declaration should always be the first line of code in your HTML files. This lets the browser know what version of HTML to expect.
+    * The <html> element will contain all of your HTML code.
+    * Information about the web page, like the title, belongs within the <head> of the page.
+    * You can add a title to your web page by using the <title> element, inside of the head.
+    * A webpage’s title appears in a browser’s tab.
+    * Anchor tags (<a>) are used to link to internal pages, external pages or content on the same page.
+    * You can create sections on a webpage and jump to them using <a> tags and adding ids to the elements you wish to jump to.
+    * Whitespace between HTML elements helps make code easier to read while not changing how elements appear in the browser.
+    * Indentation also helps make code easier to read. It makes parent-child relationships visible.
+    * Comments are written in HTML using the following syntax used in this block. 
+     -->
+
+    
+    
+    
+    
+
+<!-- 
+    col > p,
+    .col > h3 {}  ?? -->
+    
+</body>
+</html>
